@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:timeago/timeago.dart';
+import 'package:flutter/material.dart';
 import 'package:to_do_lati/models/task_model.dart';
 import 'package:to_do_lati/screens/task_details_screen.dart';
 
@@ -65,11 +65,11 @@ class TaskCard extends StatelessWidget {
                             color: Colors.white,
                           ),
                         ),
-                        if (taskModel.subtitle != null)
+                        if (taskModel.subTitle != null)
                           Padding(
                             padding: const EdgeInsets.only(top: 4.0),
                             child: Text(
-                              taskModel.subtitle!,
+                              taskModel.subTitle!,
                               style: const TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
@@ -100,7 +100,7 @@ class TaskCard extends StatelessWidget {
                   },
                   icon: const Icon(
                     Icons.delete,
-                    color: Colors.redAccent,
+                    color: Color.fromARGB(255, 241, 132, 132),
                     size: 28,
                   ),
                 ),
