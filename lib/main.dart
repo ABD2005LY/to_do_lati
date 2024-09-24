@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:to_do_lati/screens/home_screen.dart';
 import 'package:to_do_lati/providers/tasks_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:to_do_lati/providers/dark_mode_provider.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,6 +25,16 @@ class MyApp extends StatelessWidget {
       child:
           Consumer<DarkModeProvider>(builder: (context, darkModeConsumer, _) {
         return MaterialApp(
+          localizationsDelegates: [
+            AppLocalizations.delegate, // Add this line
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: [
+            Locale('en'), // English
+            Locale('es'), // Spanish
+          ],
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: ThemeData(
