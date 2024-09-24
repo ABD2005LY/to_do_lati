@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter/foundation.dart';
-import 'package:to_do_lati/provider/dark_mode_provider.dart';
+import 'package:to_do_lati/providers/dark_mode_provider.dart';
 
 class DrawerTile extends StatelessWidget {
   const DrawerTile(

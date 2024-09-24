@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-<<<<<<< HEAD
-=======
-import 'package:to_do_lati/providers/dark_mode_provider.dart';
-import 'package:to_do_lati/providers/tasks_provider.dart';
->>>>>>> f2094da211d533c09a9cc58779dada9bf0c6b65d
 import 'package:to_do_lati/screens/home_screen.dart';
-import 'package:to_do_lati/provider/task_provider.dart';
-import 'package:to_do_lati/provider/dark_mode_provider.dart';
+import 'package:to_do_lati/providers/tasks_provider.dart';
+import 'package:to_do_lati/providers/dark_mode_provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,11 +24,7 @@ class MyApp extends StatelessWidget {
           Consumer<DarkModeProvider>(builder: (context, darkModeConsumer, _) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-<<<<<<< HEAD
           title: 'Flutter Demo',
-=======
-          title: 'To DO Lati',
->>>>>>> f2094da211d533c09a9cc58779dada9bf0c6b65d
           theme: ThemeData(
             dividerTheme: DividerThemeData(
               color: darkModeConsumer.isDark ? Colors.white24 : Colors.black26,
