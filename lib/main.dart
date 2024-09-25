@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         return Consumer<LocalizationProvider>(
             builder: (context, _languageConsumer, _) {
           return MaterialApp(
-            locale: Locale(_languageConsumer.language),
+            locale: Locale(_languageConsumer.language ?? "en"),
             localizationsDelegates: [
               AppLocalizations.delegate, // Add this line
               GlobalMaterialLocalizations.delegate,

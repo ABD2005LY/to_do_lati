@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LocalizationProvider with ChangeNotifier {
-  String language = "en";
+  String? language;
 
-  get isDark => null;
 
   getlanguage() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -14,8 +13,7 @@ class LocalizationProvider with ChangeNotifier {
 
   storelanguage(String langu) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString("lnag", langu);
+    prefs.setString("lang", langu);
     getlanguage();
-    notifyListeners();
   }
 }

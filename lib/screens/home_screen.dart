@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       }),
                   GestureDetector(
                     child: DrawerTile(
-                        text: AppLocalizations.of(context)!.cancel,
+                        text: AppLocalizations.of(context)!.english,
                         onTab: () {
                           Provider.of<LocalizationProvider>(context,
                                   listen: false)
@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   GestureDetector(
                     child: DrawerTile(
-                        text: AppLocalizations.of(context)!.entertasksubtitle,
+                        text: AppLocalizations.of(context)!.spanish,
                         onTab: () {
                           Provider.of<LocalizationProvider>(context,
                                   listen: false)
@@ -73,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   GestureDetector(
                     child: DrawerTile(
-                        text: AppLocalizations.of(context)!.hello,
+                        text: AppLocalizations.of(context)!.arabic,
                         onTab: () {
                           Provider.of<LocalizationProvider>(context,
                                   listen: false)

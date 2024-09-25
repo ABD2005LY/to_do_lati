@@ -6,6 +6,7 @@
     "taskdetails": "Detalles de la tarea",
     "entertaskname": "Introduzca el nombre de la tarea",
     "entertasksubtitle": "Introduzca el subtítulo de la tarea",
+    "addnewtask": "Añadir nueva tarea",
     "cancel": "Cancelar",
     "ok": "Aceptar",
     "waiting": "Esperando",
