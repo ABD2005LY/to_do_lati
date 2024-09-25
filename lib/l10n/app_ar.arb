@@ -11,5 +11,14 @@
     "waiting": "قيد الإنتظار",
     "completed": "مكتملة",
     "title": "عنوان",
-    "subtitle": "عنوان فرعي"
+    "subtitle": "عنوان فرعي",
+    "todo": "TO Do",
+    "titleistoolong": " العنوان طويل جدا ",
+    "titlemustbeatleat6letterslong": "على الاقل 6 احرف ",
+    "edit": "تعديل",
+    "edityourtask": "تعديل مهمة ",
+    "english": "أنجيلزي",
+    "spanish": "الأسبانية",
+    "arabic": "العربية",
+    "notasksavailable": "المهام غير المتاحة"
 }

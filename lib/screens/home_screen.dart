@@ -6,7 +6,9 @@ import 'package:to_do_lati/providers/tasks_provider.dart';
 import 'package:to_do_lati/widgets/cilkckables/drawer.dart';
 import 'package:to_do_lati/widgets/dialog/task_dialog.dart';
 import 'package:to_do_lati/screens/task_details_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:to_do_lati/providers/dark_mode_provider.dart';
+import 'package:to_do_lati/providers/localization_provicder.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -22,15 +24,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    super.initState();
+    print("thisFunWorks");
     Provider.of<TasksProvider>(context, listen: false).getTasks();
-    Provider.of<DarkModeProvider>(context, listen: false).getMode();
+    print(Provider.of<TasksProvider>(context, listen: false).tasks);
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Consumer2<DarkModeProvider, TasksProvider>(
-      builder: (context, darkModeProvider, tasksProvider, child) {
+    return Consumer3<DarkModeProvider, TasksProvider, LocalizationProvider>(
+      builder: (context, darkModeProvider, tasksProvider, localizationProvider,
+          child) {
         return Scaffold(
           drawer: Drawer(
             child: Padding(
@@ -38,11 +42,44 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 children: [
                   DrawerTile(
-                    icon: darkModeProvider.isDark
-                        ? Icons.dark_mode
-                        : Icons.light_mode,
-                    text: darkModeProvider.isDark ? "Dark Mode" : "Light Mode",
-                    onTab: () {},
+                      icon: darkModeProvider.isDark
+                          ? Icons.dark_mode
+                          : Icons.light_mode,
+                      text:
+                          darkModeProvider.isDark ? "Dark Mode" : "Light Mode",
+                      onTab: () {
+                        Provider.of<LocalizationProvider>(context,
+                            listen: false);
+                      }),
+                  GestureDetector(
+                    child: DrawerTile(
+                        text: AppLocalizations.of(context)!.cancel,
+                        onTab: () {
+                          Provider.of<LocalizationProvider>(context,
+                                  listen: false)
+                              .storelanguage("en");
+                        },
+                        icon: Icons.language),
+                  ),
+                  GestureDetector(
+                    child: DrawerTile(
+                        text: AppLocalizations.of(context)!.entertasksubtitle,
+                        onTab: () {
+                          Provider.of<LocalizationProvider>(context,
+                                  listen: false)
+                              .storelanguage("es");
+                        },
+                        icon: Icons.language),
+                  ),
+                  GestureDetector(
+                    child: DrawerTile(
+                        text: AppLocalizations.of(context)!.hello,
+                        onTab: () {
+                          Provider.of<LocalizationProvider>(context,
+                                  listen: false)
+                              .storelanguage("ar");
+                        },
+                        icon: Icons.language),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -62,8 +99,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               : Colors.black,
                           title: Text(
                             darkModeProvider.isDark == true
-                                ? "Dark Mode"
-                                : "Light Mode",
+                                ? AppLocalizations.of(context)!.darkmode
+                                : AppLocalizations.of(context)!.lightmode,
                             style: TextStyle(
                                 color: darkModeProvider.isDark
                                     ? Colors.white
@@ -76,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
@@ -129,15 +166,16 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 TabBar(
-                  labelColor:
-                      darkModeProvider.isDark ? Colors.white : Colors.black,
-                  unselectedLabelColor: Colors.grey,
-                  indicatorColor: Colors.blue,
-                  tabs: const [
-                    Tab(text: "Pending Tasks"),
-                    Tab(text: "Completed Tasks"),
-                  ],
-                ),
+                    labelColor:
+                        darkModeProvider.isDark ? Colors.white : Colors.black,
+                    unselectedLabelColor: Colors.grey,
+                    indicatorColor: Colors.blue,
+                    tabs: [
+                      Tab(text: AppLocalizations.of(context)!.waiting),
+                      Tab(
+                        text: AppLocalizations.of(context)!.completed,
+                      )
+                    ]),
                 Expanded(
                   child: TabBarView(
                     physics: const NeverScrollableScrollPhysics(),
@@ -164,7 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
     if (filteredTasks.isEmpty) {
       return Center(
         child: Text(
-          "No tasks available.",
+          AppLocalizations.of(context)!.entertasksubtitle,
           style: TextStyle(
               color: darkModeProvider.isDark ? Colors.white : Colors.black),
         ),

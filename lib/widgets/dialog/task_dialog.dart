@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AddTaskDialog extends StatefulWidget {
   const AddTaskDialog({
@@ -76,19 +77,20 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
                       widget.subTitleController.clear();
                       Navigator.pop(context);
                     },
-                    child: const Text(
-                      "Cancel",
+                    child: Text(
                       style: TextStyle(color: Colors.red),
+                      AppLocalizations.of(context)!.cancel,
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {
-                      if (widget.formKey.currentState!.validate()) {
-                        widget.onTap();
-                      }
-                    },
-                    child: const Text("ADD"),
-                  ),
+                      onPressed: () {
+                        if (widget.formKey.currentState!.validate()) {
+                          widget.onTap();
+                        }
+                      },
+                      child: Text(
+                        AppLocalizations.of(context)!.add,
+                      )),
                 ],
               ),
             ],

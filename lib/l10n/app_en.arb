@@ -11,5 +11,14 @@
     "waiting": "Waiting",
     "completed": "Completed",
     "title": "Title",
-    "subtitle":"SubTitle"
+    "subtitle": "Sub Title",
+    "todo": "TO Do",
+    "titleistoolong": " Title is too long ",
+    "titlemustbeatleat6letterslong": "al menos 6 letras",
+    "edit": "Edit",
+    "edityourtask": "Edit your task",
+    "english": "English",
+    "spanish": "spanish",
+    "arabic": "Arabic",
+    "notasksavailable": "Notasksavailable"
 }

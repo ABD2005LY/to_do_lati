@@ -33,10 +33,10 @@ class TaskCard extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
-          color: Colors.blueAccent, 
+            color: Colors.blueAccent,
             boxShadow: [
               BoxShadow(
-                color: Colors.blue.withOpacity(0.4), 
+                color: Colors.blue.withOpacity(0.4),
                 blurRadius: 8,
                 offset: const Offset(0, 3),
               ),
@@ -52,7 +52,7 @@ class TaskCard extends StatelessWidget {
                     Checkbox(
                       value: taskModel.isCompleted,
                       onChanged: (check) {
-                        onToggleComplete(); 
+                        onToggleComplete();
                       },
                       activeColor: Colors.white,
                       checkColor: Colors.blue,
@@ -67,10 +67,10 @@ class TaskCard extends StatelessWidget {
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: taskModel.isCompleted
-                                ? Colors.grey 
-                                : Colors.white, 
+                                ? Colors.grey
+                                : Colors.white,
                             decoration: taskModel.isCompleted
-                                ? TextDecoration.lineThrough 
+                                ? TextDecoration.lineThrough
                                 : TextDecoration.none,
                           ),
                         ),

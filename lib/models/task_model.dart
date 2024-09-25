@@ -21,6 +21,7 @@ class TaskModel {
     return {
       'title': title,
       'subtitle': subTitle,
+      // ignore: equal_keys_in_map
       'subtitle': subTitle,
       'isCompleted': isCompleted,
       'createdAt': createdAt.toIso8601String(),
